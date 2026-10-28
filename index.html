@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<meta
+    name="description"
+    content="Echo Wealth — Play, Invest, Grow."
+>
+
+<meta name="theme-color" content="#050505">
+
+<title>Echo Wealth | Play. Invest. Grow.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+<link rel="stylesheet" href="css/style.css">
+
+<script
+    src="https://unpkg.com/lucide@latest"
+    defer
+></script>
+
+<script src="js/app.js" defer></script>
+```
+
+</head>
+
+<body>
+
+<div class="app-shell">
+
+```
+<!-- HEADER -->
+<header class="topbar">
+    <a href="#home" class="brand">
+        <span class="brand-symbol">
+            <i data-lucide="audio-lines"></i>
+        </span>
+
+        <span class="brand-name">
+            echo<span>wealth</span>
+        </span>
+    </a>
+
+    <div class="header-actions">
+        <button
+            class="icon-button"
+            type="button"
+            aria-label="Notifications"
+            id="notificationButton"
+        >
+            <i data-lucide="bell"></i>
+            <span class="notification-dot"></span>
+        </button>
+
+        <button
+            class="profile-avatar"
+            type="button"
+            aria-label="Open profile"
+            data-go="profile"
+        >D</button>
+    </div>
+</header>
+
+
+<!-- MAIN CONTENT -->
+<main class="main-content">
+
+    <!-- HOME PAGE -->
+    <section class="page active" id="home" data-page="home">
+
+        <div class="welcome-section">
+            <div>
+                <p class="eyebrow">YOUR FINANCIAL PLAYGROUND</p>
+
+                <h1>
+                    Welcome back,
+                    <span class="gradient-text">Explorer.</span>
+                </h1>
+
+                <p class="muted-text">
+                    Your next achievement starts here.
+                </p>
+            </div>
+
+            <div class="level-badge">
+                <i data-lucide="sparkles"></i>
+                <span>LEVEL 01</span>
+            </div>
+        </div>
+
+
+        <article class="balance-card">
+            <div class="balance-card-top">
+                <div>
+                    <p class="card-label">TOTAL WALLET BALANCE</p>
+
+                    <h2 class="balance-amount">
+                        <span class="currency">₦</span>
+                        <span id="walletBalance">0.00</span>
+                    </h2>
+
+                    <p class="balance-caption">
+                        Simulated demonstration balance
+                    </p>
+                </div>
+
+                <div class="balance-icon">
+                    <i data-lucide="wallet"></i>
+                </div>
+            </div>
+
+            <div class="balance-divider"></div>
+
+            <div class="balance-footer">
+                <div>
+                    <span class="small-label">ECHO COINS</span>
+
+                    <div class="coin-value">
+                        <span class="coin-symbol">✦</span>
+                        <strong id="coinBalance">0</strong>
+                    </div>
+                </div>
+
+                <button
+                    class="button button-light"
+                    type="button"
+                    data-go="wallet"
+                >
+                    View wallet
+                    <i data-lucide="arrow-up-right"></i>
+                </button>
+            </div>
+        </article>
+
+
+        <!-- QUICK ACTIONS -->
+        <section class="section-block">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR NEXT MOVE</p>
+                    <h2>Quick actions</h2>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <button
+                    class="action-card action-games"
+                    type="button"
+                    data-go="games"
+                >
+                    <span class="action-icon">
+                        <i data-lucide="gamepad-2"></i>
+                    </span>
+
+                    <span class="action-title">Play games</span>
+                    <span class="action-description">Complete challenges</span>
+
+                    <i
+                        data-lucide="arrow-up-right"
+                        class="action-arrow"
+                    ></i>
+                </button>
+
+                <button
+                    class="action-card action-invest"
+                    type="button"
+                    data-go="invest"
+                >
+                    <span class="action-icon">
+                        <i data-lucide="trending-up"></i>
+                    </span>
+
+                    <span class="action-title">Explore invest</span>
+                    <span class="action-description">Discover opportunities</span>
+
+                    <i
+                        data-lucide="arrow-up-right"
+                        class="action-arrow"
+                    ></i>
+                </button>
+            </div>
+        </section>
+
+
+        <!-- DAILY PROGRESS -->
+        <section class="section-block">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">KEEP YOUR MOMENTUM</p>
+                    <h2>Daily progress</h2>
+                </div>
+
+                <span class="progress-count" id="homeChallengeCount">
+                    0 / 3
+                </span>
+            </div>
+
+            <article class="progress-card">
+                <div class="progress-icon">
+                    <i data-lucide="target"></i>
+                </div>
+
+                <div class="progress-info">
+                    <h3>Complete your daily challenges</h3>
+
+                    <p class="muted-text">
+                        Play, learn, and collect achievements.
+                    </p>
+
+                    <div class="progress-track">
+                        <div
+                            class="progress-fill"
+                            id="homeChallengeProgress"
+                        ></div>
+                    </div>
+                </div>
+
+                <button
+                    class="round-button"
+                    type="button"
+                    data-go="games"
+                    aria-label="View challenges"
+                >
+                    <i data-lucide="arrow-right"></i>
+                </button>
+            </article>
+        </section>
+
+
+        <!-- RECENT ACTIVITY -->
+        <section class="section-block">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR JOURNEY</p>
+                    <h2>Recent activity</h2>
+                </div>
+
+                <button
+                    class="text-button"
+                    type="button"
+                    data-go="wallet"
+                >View all</button>
+            </div>
+
+            <div class="activity-list" id="recentActivity">
+                <div class="empty-state">
+                    <i data-lucide="activity"></i>
+                    <p>Your game sessions and rewards will appear here.</p>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+
+    <!-- GAMES PAGE -->
+    <section class="page" id="games" data-page="games" hidden>
+
+        <div class="page-intro">
+            <p class="eyebrow">PLAY YOUR WAY</p>
+            <h1>Game <span class="gradient-text">zone.</span></h1>
+
+            <p class="muted-text">
+                Challenge your mind. Discover your next favourite game.
+            </p>
+        </div>
+
+        <article class="featured-game">
+            <div class="featured-game-content">
+                <span class="featured-label">✦ FEATURED GAME</span>
+
+                <h2>Memory Rush</h2>
+
+                <p>
+                    Test your memory, beat your best score,
+                    and collect virtual rewards.
+                </p>
+
+                <button
+                    class="button button-primary"
+                    id="startMemoryGame"
+                    type="button"
+                >
+                    Play now
+                    <i data-lucide="arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="featured-game-art">
+                <i data-lucide="brain"></i>
+                <span class="orbit orbit-one"></span>
+                <span class="orbit orbit-two"></span>
+            </div>
+        </article>
+
+
+        <section class="section-block">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">EXPLORE</p>
+                    <h2>Choose your challenge</h2>
+                </div>
+            </div>
+
+            <div class="game-stats-grid">
+                <article class="game-stat-card">
+                    <span class="small-label">GAMES PLAYED</span>
+                    <strong id="gamesPlayedStat">0</strong>
+                    <span class="muted-text">All time</span>
+                </article>
+
+                <article class="game-stat-card">
+                    <span class="small-label">COINS EARNED</span>
+                    <strong id="coinsEarnedStat">0</strong>
+                    <span class="muted-text">Demo coins</span>
+                </article>
+
+                <article class="game-stat-card">
+                    <span class="small-label">BEST SCORE</span>
+                    <strong id="bestScoreStat">0</strong>
+                    <span class="muted-text">Across games</span>
+                </article>
+            </div>
+
+
+            <div class="game-grid">
+
+                <button class="game-card" type="button" data-game="memory">
+                    <span class="game-art purple-art">
+                        <i data-lucide="brain"></i>
+                    </span>
+                    <strong>Memory Rush</strong>
+                    <span class="muted-text">Memory & focus</span>
+                    <span class="game-tag">PLAY</span>
+                </button>
+
+                <button class="game-card" type="button" data-game="reaction">
+                    <span class="game-art green-art">
+                        <i data-lucide="zap"></i>
+                    </span>
+                    <strong>Quick Reflex</strong>
+                    <span class="muted-text">Speed & reaction</span>
+                    <span class="game-tag">PLAY</span>
+                </button>
+
+                <button class="game-card" type="button" data-game="puzzle">
+                    <span class="game-art cyan-art">
+                        <i data-lucide="calculator"></i>
+                    </span>
+                    <strong>Number Dash</strong>
+                    <span class="muted-text">Quick maths & streaks</span>
+                    <span class="game-tag">PLAY</span>
+                </button>
+
+                <button class="game-card" type="button" data-game="runner">
+                    <span class="game-art runner-art">
+                        <i data-lucide="footprints"></i>
+                    </span>
+                    <strong>Neon Lane Run</strong>
+                    <span class="muted-text">Dodge obstacles & collect sparks</span>
+                    <span class="game-tag">PLAY</span>
+                </button>
+
+                <button class="game-card" type="button" data-game="match3">
+                    <span class="game-art match-art">
+                        <i data-lucide="gem"></i>
+                    </span>
+                    <strong>Gem Pop</strong>
+                    <span class="muted-text">Match gems in a puzzle grid</span>
+                    <span class="game-tag">PLAY</span>
+                </button>
+
+                <button class="game-card" type="button" data-game="daily">
+                    <span class="game-art orange-art">
+                        <i data-lucide="calendar-check"></i>
+                    </span>
+                    <strong>Daily Quest</strong>
+                    <span class="muted-text">Daily challenges</span>
+                    <span class="game-tag">VIEW QUESTS</span>
+                </button>
+
+            </div>
+        </section>
+
+
+        <section class="section-block" id="dailyChallengesSection">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">SMALL STEPS, BIG STREAKS</p>
+                    <h2>Daily challenges</h2>
+                </div>
+
+                <span class="progress-count" id="challengeCount">0 / 3</span>
+            </div>
+
+            <div class="challenge-list" id="challengeList"></div>
+        </section>
+
+
+        <section class="section-block">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR PERSONAL BESTS</p>
+                    <h2>Game records</h2>
+                </div>
+            </div>
+
+            <div class="game-records" id="gameRecords"></div>
+        </section>
+
+
+        <div class="notice-card">
+            <i data-lucide="info"></i>
+
+            <p>
+                Game rewards are demonstration coins.
+                They are not real money and cannot be withdrawn.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- INVEST PAGE -->
+    <section class="page" id="invest" data-page="invest" hidden>
+
+        <div class="page-intro">
+            <p class="eyebrow">DISCOVER OPPORTUNITIES</p>
+
+            <h1>
+                Fashion meets
+                <span class="gradient-text">growth.</span>
+            </h1>
+
+            <p class="muted-text">
+                Explore fashion-related commercial opportunities.
+            </p>
+        </div>
+
+        <article class="invest-overview">
+            <div>
+                <p class="card-label">YOUR INVESTMENT PORTFOLIO</p>
+                <h2>₦0.00</h2>
+                <p class="muted-text">Demonstration data</p>
+            </div>
+
+            <div class="portfolio-icon">
+                <i data-lucide="chart-no-axes-combined"></i>
+            </div>
+        </article>
+
+
+        <section class="section-block">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">THE COLLECTION</p>
+                    <h2>Explore opportunities</h2>
+                </div>
+            </div>
+
+            <article class="opportunity-card">
+                <div class="opportunity-art shoe-art">
+                    <span class="opportunity-badge">FASHION</span>
+                    <i data-lucide="footprints"></i>
+                </div>
+
+                <div class="opportunity-details">
+                    <p class="eyebrow">FOOTWEAR COLLECTION</p>
+                    <h3>Urban Essentials</h3>
+
+                    <p class="muted-text">
+                        An illustrative fashion inventory concept.
+                    </p>
+
+                    <div class="opportunity-stats">
+                        <div>
+                            <span class="small-label">Example amount</span>
+                            <strong>₦10,000</strong>
+                        </div>
+
+                        <div>
+                            <span class="small-label">Example return</span>
+                            <strong class="green-text">20%</strong>
+                        </div>
+                    </div>
+
+                    <p class="demo-disclaimer">
+                        Demo only. This is not a live investment offer
+                        or a guarantee of returns.
+                    </p>
+
+                    <button
+                        class="button button-primary button-full"
+                        type="button"
+                        data-opportunity="urban"
+                    >
+                        Explore opportunity
+                        <i data-lucide="arrow-up-right"></i>
+                    </button>
+                </div>
+            </article>
+
+
+            <article class="opportunity-card">
+                <div class="opportunity-art clothing-art">
+                    <span class="opportunity-badge">APPAREL</span>
+                    <i data-lucide="shirt"></i>
+                </div>
+
+                <div class="opportunity-details">
+                    <p class="eyebrow">STREETWEAR COLLECTION</p>
+                    <h3>Everyday Motion</h3>
+
+                    <p class="muted-text">
+                        A second example of a potential fashion venture.
+                    </p>
+
+                    <div class="opportunity-stats">
+                        <div>
+                            <span class="small-label">Example amount</span>
+                            <strong>₦5,000</strong>
+                        </div>
+
+                        <div>
+                            <span class="small-label">Example return</span>
+                            <strong class="green-text">20%</strong>
+                        </div>
+                    </div>
+
+                    <p class="demo-disclaimer">
+                        Demo only. Terms and commercial arrangements
+                        have not been established.
+                    </p>
+
+                    <button
+                        class="button button-secondary button-full"
+                        type="button"
+                        data-opportunity="motion"
+                    >
+                        Explore opportunity
+                        <i data-lucide="arrow-up-right"></i>
+                    </button>
+                </div>
+            </article>
+        </section>
+
+    </section>
+
+
+    <!-- WALLET PAGE -->
+    <section class="page" id="wallet" data-page="wallet" hidden>
+
+        <div class="page-intro">
+            <p class="eyebrow">YOUR MONEY SPACE</p>
+
+            <h1>
+                Your <span class="gradient-text">wallet.</span>
+            </h1>
+
+            <p class="muted-text">
+                Keep track of your balances and activity.
+            </p>
+        </div>
+
+
+        <!-- MAIN WALLET BALANCE -->
+        <article class="wallet-main-card">
+            <p class="card-label">SIMULATED WALLET BALANCE</p>
+
+            <h2>
+                ₦<span id="walletPageBalance">0.00</span>
+            </h2>
+
+            <p class="muted-text">
+                This is a local practice balance, not actual money.
+            </p>
+        </article>
+
+
+        <!-- WALLET BALANCES -->
+        <div class="wallet-balance-grid">
+
+            <article class="mini-balance-card">
+                <i data-lucide="coins"></i>
+
+                <p class="small-label">AVAILABLE ECHO COINS</p>
+
+                <h3 id="walletCoins">0</h3>
+            </article>
+
+            <article class="mini-balance-card">
+                <i data-lucide="trending-up"></i>
+
+                <p class="small-label">INVESTMENTS</p>
+
+                <h3>₦0.00</h3>
+            </article>
+
+        </div>
+
+
+        <!-- NEW: COIN CONVERSION -->
+        <section class="wallet-conversion-card">
+
+            <div class="wallet-conversion-header">
+                <span class="eyebrow">ECHO WALLET</span>
+
+                <h2>Convert your coins</h2>
+
+                <p class="muted-text">
+                    Turn your game coins into simulated wallet balance.
+                </p>
+            </div>
+
+
+            <div class="conversion-rate">
+                <div>
+                    <span class="small-label">YOUR CONVERSION RATE</span>
+                    <strong>100 Coins = ₦1.00</strong>
+                </div>
+
+                <span class="conversion-rate-icon">
+                    <i data-lucide="arrow-left-right"></i>
+                </span>
+            </div>
+
+
+            <div class="conversion-available">
+                <span>Available coins</span>
+                <strong><span id="conversionAvailableCoins">0</span> ✦</strong>
+            </div>
+
+
+            <div class="conversion-input-group">
+                <label for="coinsToConvert">Coins to convert</label>
+
+                <input
+                    type="number"
+                    id="coinsToConvert"
+                    min="1"
+                    step="1"
+                    inputmode="numeric"
+                    placeholder="e.g. 100"
+                >
+
+                <p class="conversion-preview" id="conversionPreview">
+                    You will receive ₦0.00
+                </p>
+            </div>
+
+
+            <div class="conversion-buttons">
+                <button
+                    type="button"
+                    id="convertCoinsButton"
+                    class="button button-primary button-full"
+                >
+                    <i data-lucide="wallet"></i>
+                    Convert to wallet
+                </button>
+
+                <button
+                    type="button"
+                    id="convertAllCoinsButton"
+                    class="button button-secondary button-full"
+                >
+                    Convert all coins
+                </button>
+            </div>
+
+
+            <div class="wallet-demo-notice">
+                <i data-lucide="info"></i>
+
+                <p>
+                    <strong>Practice mode.</strong>
+                    This conversion changes only the balances stored
+                    in this browser. No real money is created, and
+                    withdrawals are not available.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- CONVERSION TOTAL -->
+        <section class="section-block">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR PROGRESS</p>
+                    <h2>Total converted</h2>
+                </div>
+            </div>
+
+            <article class="mini-balance-card converted-total-card">
+                <i data-lucide="check-circle-2"></i>
+
+                <p class="small-label">TOTAL VALUE CONVERTED</p>
+
+                <h3 id="totalConverted">₦0.00</h3>
+
+                <p class="muted-text">
+                    Total simulated conversions in this browser.
+                </p>
+            </article>
+        </section>
+
+
+        <!-- WALLET ACTIVITY -->
+        <section class="section-block">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR TRANSACTIONS</p>
+                    <h2>Wallet activity</h2>
+                </div>
+            </div>
+
+            <div class="activity-list" id="walletActivity">
+                <div class="empty-state">
+                    <i data-lucide="receipt-text"></i>
+                    <p>Your conversions will appear here.</p>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+
+    <!-- PROFILE PAGE -->
+    <section class="page" id="profile" data-page="profile" hidden>
+
+        <div class="page-intro">
+            <p class="eyebrow">YOUR SPACE</p>
+
+            <h1>
+                Your <span class="gradient-text">profile.</span>
+            </h1>
+        </div>
+
+        <article class="profile-card">
+            <div class="large-avatar">D</div>
+
+            <h2>Echo Explorer</h2>
+
+            <p class="muted-text">Welcome to Echo Wealth.</p>
+
+            <span class="profile-level">
+                <i data-lucide="sparkles"></i>
+                LEVEL 01
+            </span>
+        </article>
+
+
+        <section class="section-block">
+            <div class="section-heading">
+                <h2>Account settings</h2>
+            </div>
+
+            <div class="settings-list">
+
+                <button class="settings-item" type="button" data-setting="account">
+                    <i data-lucide="user-round"></i>
+                    <span>Personal information</span>
+                    <i data-lucide="chevron-right"></i>
+                </button>
+
+                <button class="settings-item" type="button" data-setting="security">
+                    <i data-lucide="shield-check"></i>
+                    <span>Security</span>
+                    <i data-lucide="chevron-right"></i>
+                </button>
+
+                <button class="settings-item" type="button" data-setting="notifications">
+                    <i data-lucide="bell"></i>
+                    <span>Notifications</span>
+                    <i data-lucide="chevron-right"></i>
+                </button>
+
+                <button class="settings-item" type="button" data-setting="support">
+                    <i data-lucide="help-circle"></i>
+                    <span>Help & support</span>
+                    <i data-lucide="chevron-right"></i>
+                </button>
+
+            </div>
+        </section>
+
+    </section>
+
+</main>
+
+
+<!-- BOTTOM NAVIGATION -->
+<nav class="bottom-nav" aria-label="Main navigation">
+
+    <button class="nav-item active" type="button" data-go="home" aria-current="page">
+        <i data-lucide="house"></i>
+        <span>Home</span>
+    </button>
+
+    <button class="nav-item" type="button" data-go="games">
+        <i data-lucide="gamepad-2"></i>
+        <span>Games</span>
+    </button>
+
+    <button class="nav-item" type="button" data-go="invest">
+        <i data-lucide="gem"></i>
+        <span>Invest</span>
+    </button>
+
+    <button class="nav-item" type="button" data-go="wallet">
+        <i data-lucide="wallet"></i>
+        <span>Wallet</span>
+    </button>
+
+    <button class="nav-item" type="button" data-go="profile">
+        <i data-lucide="user-round"></i>
+        <span>Profile</span>
+    </button>
+
+</nav>
+
+
+<!-- SHARED DIALOG -->
+<dialog id="appDialog" class="app-dialog">
+    <div class="dialog-content">
+
+        <button
+            class="dialog-close"
+            type="button"
+            id="closeDialog"
+            aria-label="Close dialog"
+        >
+            <i data-lucide="x"></i>
+        </button>
+
+        <div class="dialog-icon">
+            <i data-lucide="sparkles"></i>
+        </div>
+
+        <h2 id="dialogTitle">Echo Wealth</h2>
+
+        <p id="dialogMessage" class="muted-text"></p>
+
+        <button
+            class="button button-primary button-full"
+            type="button"
+            id="dialogConfirm"
+        >
+            Got it
+        </button>
+
+    </div>
+</dialog>
+```
+
+</div>
+
+</body>
+</html>
